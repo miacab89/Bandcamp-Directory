@@ -1,0 +1,12 @@
+.map {
+    height: 100%;
+    text-align: center;
+}
+  
+  /* Optional: Makes the sample page fill the window. */
+  
+  #coords {
+    background-color: black;
+    color: white;
+    padding: 5px;
+  }
