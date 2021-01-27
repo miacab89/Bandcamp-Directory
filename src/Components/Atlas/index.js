@@ -16,7 +16,7 @@ export class MapContainer extends Component {
     return (
       <div className="map">
         <object 
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqyrGx0vh7yA_8qIIcVcAN4TMtQUxMgUo&callback=initMap&libraries=&v=weekly" 
+        src="https://maps.googleapis.com/maps/api/js?key=REACT_APP_API_KEY&callback=initMap&libraries=&v=weekly" 
         title={uniqueTitle}>
             <Map
             google={this.props.google}
