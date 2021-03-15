@@ -5,8 +5,7 @@ import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 const mapStyles = {
   width: '100%',
-  height: '75%'
-
+  height: '50%'
 };
 
 const { uniqueTitle } = ""; 
@@ -21,6 +20,7 @@ export class MapContainer extends Component {
             <Map
             google={this.props.google}
             zoom={14}
+            center={14}
             style={mapStyles}
             initialCenter={
               {

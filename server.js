@@ -1,22 +1,23 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000; 
-const morgan = require('morgan'); 
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const PORT = process.env.PORT || 3500; 
 
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// Middleware
+app.use(cors()); 
+app.use(express.json()); 
+app.use(express.static(__dirname));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+app.get('/api/bands/all', function(req, res) {
 
-app.use(morgan('tiny'))
+})
 
-app.get('/', (req, res) => {
-    res.send('Welcome to the Directory :)');
-});
 
-app.listen(PORT, function() {
-    console.log('App listening on port 3000!')
-});
+app.listen(PORT, () => {
+  console.log("Server is listening at Port 3500!")
+}); 
+  
