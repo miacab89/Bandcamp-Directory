@@ -6,8 +6,8 @@ import { Route, Switch, Link } from 'react-router-dom';
 import Directory from './Components/Directory/index.js';
 import Index from './Components/Index/index.js'; 
 import Profile from './Components/Profile/index.js'; 
-
-
+import Header from './Components/Header/index.js';
+import NavBar from './Components/NavBar/index.js';
 
 const DirectoryMain = () => <Directory/>
 const IndexMain = () => <Index/>
@@ -22,7 +22,9 @@ render() {
   return (
     <div className="App">
       <div className="App-header">
-        <h1>Metallum Global Directory</h1>      
+        <NavBar />
+        <Header />
+        <h3>Metallum Directory</h3>      
         <h5>Powered by the Unofficial Metal Archives API & Google Maps</h5>
         <div className="links">
           <Link to={`${path}`} className="link">Directory</Link>
@@ -36,8 +38,7 @@ render() {
             <Route path={`${path}/profile`} component={ProfileMain} />
           </Switch>
         </div>
-        {/* <Atlas /> */}
-        </div>
+      </div>
     </div>
     );
   }
