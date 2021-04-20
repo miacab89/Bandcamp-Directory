@@ -21,8 +21,8 @@ render() {
 
   return (
     <div className="App">
+      <NavBar />
       <div className="App-header">
-        <NavBar />
         <Header />
         <h3>Metallum Directory</h3>      
         <h5>Powered by the Unofficial Metal Archives API & Google Maps</h5>

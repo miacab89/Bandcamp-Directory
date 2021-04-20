@@ -1,0 +1,12 @@
+{
+    "bands": {
+        "artist": "Will of the Whore",
+        "genre": "Black Metal",
+        "album": "Bless the Severed Hand Path",
+        "band_members": {
+            "guitarist": "Mia Cabrera",
+            "bassist": "Bradley Tiffin",
+            "drummer": "Warren Bernard"
+        }
+    }
+}
