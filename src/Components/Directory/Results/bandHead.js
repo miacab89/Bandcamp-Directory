@@ -1,5 +1,3 @@
-
-
 class bandHead {  
    constructor(name, genre, location, head) {
        this.head = head;
