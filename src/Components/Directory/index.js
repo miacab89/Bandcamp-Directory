@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import Atlas from '../Atlas';
 import SearchBar from '../SearchBar';
 import './style.css';
 
+
 export class index extends Component {
     render() {
-        return (<div>
-        <SearchBar />
-        <Atlas />
-        </div>
-        )
+        return (
+            <div className="search-bar">
+                <SearchBar />
+            </div>
+            )  
+        }
     }
-}
 
-export default index
+export default index 

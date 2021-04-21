@@ -4,7 +4,7 @@ import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 
 const mapStyles = {
-  width: '100%',
+  width: '50%',
   height: '50%'
 };
 
@@ -14,7 +14,7 @@ export class MapContainer extends Component {
   render() {
     return (
       <div className="map">
-        <object 
+        <object async 
         src="https://maps.googleapis.com/maps/api/js?key=REACT_APP_API_KEY&callback=initMap&libraries=&v=weekly" 
         title={uniqueTitle}>
             <Map
