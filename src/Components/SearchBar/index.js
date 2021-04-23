@@ -5,7 +5,7 @@ import './style.css';
 const SearchBar = (props) => {
 
     return (
-        <div class="search active">
+        <div className="search active">
             <input type="search" 
             className="input" 
             placeholder="Search Artist Profile" 

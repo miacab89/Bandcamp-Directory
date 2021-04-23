@@ -26,6 +26,7 @@ render() {
         <Header />
         <h3>Metallum Directory</h3>      
         <h5>Powered by the Unofficial Metal Archives API & Google Maps</h5>
+        <Directory />
         <div className="links">
           <Link to={`${path}`} className="link">Directory</Link>
           <Link to={`${path}/index/`} className="link">Index</Link>

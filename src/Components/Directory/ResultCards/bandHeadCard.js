@@ -1,6 +1,6 @@
 import React from 'react'
 
-function bandHead(data) {
+function bandHeadCard(data) {
     return (
         <div className="card bandHead">
             <div className="card-header">${data.name}</div>
@@ -16,4 +16,4 @@ function bandHead(data) {
 
 }
 
-module.exports=bandHead
+export default bandHeadCard;
