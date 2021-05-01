@@ -9,6 +9,7 @@ import Profile from './Components/Profile/index.js';
 import Header from './Components/Header/index.js';
 import NavBar from './Components/NavBar/index.js';
 
+
 const DirectoryMain = () => <Directory/>
 const IndexMain = () => <Index/>
 const ProfileMain = () => <Profile/>
