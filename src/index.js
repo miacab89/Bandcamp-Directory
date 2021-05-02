@@ -13,20 +13,21 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 
 const routes = (
   <BrowserRouter>
-  <AuthProvider>
-    <Switch>
-      <Route path="/directory" component={App} />
-      <Route path="/pricing" component={Pricing} />
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={SignUp} />
-      <Route path="/deactivate" component={Deactivate} />
-      <Redirect from="/" to="/directory" />
-    </Switch>
-    </AuthProvider>
+    <AuthProvider>
+      <Switch>
+        <Route path="/directory" component={App} />
+        <Route path="/pricing" component={Pricing} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="/deactivate" component={Deactivate} />
+        <Redirect from="/" to="/directory" />
+      </Switch>
+      </AuthProvider>
   </BrowserRouter>
 );
 
-ReactDOM.render(routes, document.getElementById('root'));
+ReactDOM.render(
+  routes, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

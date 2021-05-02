@@ -21,6 +21,7 @@ render() {
    
 
   return (
+    <React.StrictMode>
     <div className="App">
       <NavBar />
       <div className="App-header">
@@ -42,6 +43,7 @@ render() {
         </div>
       </div>
     </div>
+    </React.StrictMode>
     );
   }
 }; 
