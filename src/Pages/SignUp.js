@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import NavBar from '../Components/NavBar/index.js'
-import { Form, Card, Button } from 'react-bootstrap';
+import { Container, Form, Card, Button } from 'react-bootstrap';
 
 export default function SignUp() {
 
@@ -11,6 +11,7 @@ export default function SignUp() {
     return (
         <div>
         <NavBar />
+        <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh"}}>
             <Card className="form-card">
                 <Card.Body>
                     <h2 className="text-center mb-4">SignUp</h2>
@@ -31,6 +32,7 @@ export default function SignUp() {
                     </Form>
                 </Card.Body>
             </Card>
+            </Container>
         </div>
     )
 }
