@@ -2,6 +2,9 @@ import React from 'react'
 import { Nav, Navbar, Form, FormControl, Button, NavDropdown} from "react-bootstrap";
 // import { Link, Switch, Route } from 'react-router-dom';
 import Pricing from '../../Pages/Pricing.js';
+import Login from '../../Pages/Login.js'
+import SignUp from '../../Pages/SignUp.js'
+import Deactivate from '../../Pages/Deactivate.js'
 import Directory from '../../Components/Directory'; 
 import './style.css';
 
@@ -9,18 +12,17 @@ import './style.css';
 function NavBar() {
   return (
     <div className="navbar">
-      <Navbar bg="light" expand="lg" className="justify-content-center">
+      <Navbar bg="light" expand="lg" className="justify-content-left">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
         <Nav.Link href="/directory" component={Directory}>Home</Nav.Link>
         <Nav.Link href="/pricing" component={Pricing}>Pricing</Nav.Link>
-        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#" >Pricing</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+        <NavDropdown title="Account" id="basic-nav-dropdown">
+          <NavDropdown.Item href="/login" component={Login}>Login</NavDropdown.Item>
+          <NavDropdown.Item href="/signup" component={SignUp}>Sign Up</NavDropdown.Item>
           <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+          <NavDropdown.Item href="/deactivate" component={Deactivate}>Deactivate</NavDropdown.Item>
         </NavDropdown>
       </Nav>
         <Form inline>

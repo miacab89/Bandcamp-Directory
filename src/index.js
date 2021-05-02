@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Pricing from './Pages/Pricing.js'; 
+import Login from './Pages/Login.js'; 
+import SignUp from './Pages/SignUp.js'; 
+import Deactivate from './Pages/Deactivate.js'; 
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 
 const routes = (
@@ -11,6 +14,9 @@ const routes = (
     <Switch>
       <Route path="/directory" component={App} />
       <Route path="/pricing" component={Pricing} />
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={SignUp} />
+      <Route path="/deactivate" component={Deactivate} />
       <Redirect from="/" to="/directory" />
     </Switch>
   </BrowserRouter>
