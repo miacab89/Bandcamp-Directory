@@ -52,7 +52,7 @@ export default function SignUp() {
                             <Form.Label>Re-Enter Password</Form.Label>
                                 <Form.Control className="text-field" id="passwordConfirm" ref={passwordConfirmRef} required />
                         </Form.Group>
-                        <Button disabled={loading} className="button">Sign Up</Button>
+                        <Button disabled={loading} className="button" type="submit">Sign Up</Button>
                     </Form>
                 </Card.Body>
             </Card>
