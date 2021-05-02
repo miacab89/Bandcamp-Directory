@@ -1,6 +1,6 @@
-import React, {useRef} from 'react';
-import NavBar from '../Components/NavBar/index.js'
-import { Container, Form, Card, Button } from 'react-bootstrap';
+import React, {useRef, useState} from 'react';
+import { Container, Form, Card, Button, Alert } from 'react-bootstrap';
+import { useAuth } from '../Contexts/AuthContext.js'; 
 
 export default function SignUp() {
 
@@ -8,14 +8,38 @@ export default function SignUp() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef() 
+    const { signup } = useAuth()
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
+     
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+
+        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+            return setError('Passwords do not match')
+        }
+
+        try {
+            setError('')
+            setLoading(true)
+            await signup(emailRef.current.value, passwordRef.current.value)
+        } catch {
+            setError('Failed to create an account')
+        }
+        setLoading(false)
+
+    }    
+
+
     return (
         <div>
-        <NavBar />
         <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh"}}>
             <Card className="form-card">
                 <Card.Body>
                     <h2 className="text-center mb-4">SignUp</h2>
-                    <Form>
+                    {error && <Alert variant="danger">{error}</Alert>}
+                    <Form onSubmit={handleSubmit}>
                         <Form.Group id="email">
                             <Form.Label>E-Mail</Form.Label>
                                 <Form.Control className="text-field" id="email" ref={emailRef} required />
@@ -28,7 +52,7 @@ export default function SignUp() {
                             <Form.Label>Re-Enter Password</Form.Label>
                                 <Form.Control className="text-field" id="passwordConfirm" ref={passwordConfirmRef} required />
                         </Form.Group>
-                        <Button className="button">Sign Up</Button>
+                        <Button disabled={loading} className="button">Sign Up</Button>
                     </Form>
                 </Card.Body>
             </Card>

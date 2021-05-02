@@ -1,16 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import "bootstrap/dist/css/bootstrap.min.css"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Pricing from './Pages/Pricing.js'; 
 import Login from './Pages/Login.js'; 
 import SignUp from './Pages/SignUp.js'; 
 import Deactivate from './Pages/Deactivate.js'; 
+import { AuthProvider } from "./Contexts/AuthContext.js"
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 
 const routes = (
   <BrowserRouter>
+  <AuthProvider>
     <Switch>
       <Route path="/directory" component={App} />
       <Route path="/pricing" component={Pricing} />
@@ -19,6 +22,7 @@ const routes = (
       <Route path="/deactivate" component={Deactivate} />
       <Redirect from="/" to="/directory" />
     </Switch>
+    </AuthProvider>
   </BrowserRouter>
 );
 
