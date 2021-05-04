@@ -23,8 +23,9 @@ const routes = (
         <Redirect from="/" to="/directory" />
       </Switch>
       </AuthProvider>
-  </BrowserRouter>
-);
+  </BrowserRouter>);
+
+
 
 ReactDOM.render(
   routes, document.getElementById('root'));

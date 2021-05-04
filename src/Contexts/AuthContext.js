@@ -22,14 +22,15 @@ export function AuthProvider({children}) {
         setLoading(false)
     })
         return unsubscribe 
-    })
+    }, [])
+
     const value = {
         currentUser,
         signup
     }
         return (
             <AuthContext.Provider value={value}>
-                {!loading &&children}
+                {!loading && children}
             </AuthContext.Provider>
         )
     }
