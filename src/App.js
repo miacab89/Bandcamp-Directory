@@ -9,18 +9,25 @@ import NavBar from './Components/NavBar/index.js';
 
 
 class App extends Component {
+  render() {
 
-render() {
+ 
+
   return (
-    <React.StrictMode>
+    
     <div className="App">
       <NavBar />
+      <div className="current-date">
+        <time>
+
+        </time>
+      </div>
       <div className="App-header">
         <Header />
         <br></br>
       </div>
     </div>
-    </React.StrictMode>
+    
     );
   }
 }; 
