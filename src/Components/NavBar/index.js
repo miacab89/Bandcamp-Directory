@@ -6,16 +6,13 @@ import Login from '../../Pages/Login.js'
 import SignUp from '../../Pages/SignUp.js'
 import Deactivate from '../../Pages/Deactivate.js'
 import Directory from '../../Components/Directory'; 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCompass } from '@fortawesome/free-solid-svg-icons'
 import './style.css';
 
 
 function NavBar() {
   return (
     <div className="navbar">
-      <Navbar bg="light" expand="lg" className="justify-content-left">
-      <Navbar.Brand><FontAwesomeIcon icon={faCompass}></FontAwesomeIcon></Navbar.Brand>
+      <Navbar expand="lg" className="justify-content-left">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">

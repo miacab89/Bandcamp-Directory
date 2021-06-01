@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background: linear-gradient(#eecda3, #ef629f);
+  /* background: linear-gradient(#eecda3, #ef629f); */
   min-height: 100vh;
   display: fixed;
   flex-direction: column;
@@ -19,3 +19,11 @@ body {
   width: 100%;
 }
 
+div {
+  color: black;
+}
+
+.logo {
+  position: inherit;
+  margin-bottom: 8px; 
+}

@@ -11,16 +11,10 @@ import NavBar from './Components/NavBar/index.js';
 class App extends Component {
   render() {
 
- 
-
-  return (
-    
+  return ( 
     <div className="App">
       <NavBar />
-      <div className="current-date">
-        <time>
-
-        </time>
+      <div id="current-date">
       </div>
       <div className="App-header">
         <Header />
@@ -31,4 +25,7 @@ class App extends Component {
     );
   }
 }; 
+
+
+
 export default App;

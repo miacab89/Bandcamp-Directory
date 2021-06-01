@@ -1,22 +1,26 @@
-import React from 'react'
+import {Component} from 'react'
 import SearchBar from '../SearchBar/index.js'
+import inlieu from '../../inlieu.png'
 import './style.css'
+import {Button} from 'react-bootstrap'
 
-const Header = () => {
+class Header extends Component{
+    render() {
         return (
             <div className="jumbotron">
-                <h1 className="title">In Lieu Report</h1>
-                    <p></p>
+                <img src={inlieu} alt="inlieu" />
                     <p className="lead"></p>
                     <SearchBar />
-                     <hr className="my-4"></hr>
-                        <p>Utilize our free research tools today for underground music journalist research!</p>
-                        <p className="lead"></p>
+                    <hr className="my-4"></hr>
+                    <p>In Leiu Report assists with thousands of venues in their booking logistics.</p>
+                    <p>Book a band today with our simple toolkits!</p>
+                    <Button variant="dark" size="lg" href="/signup">Register</Button>
+                    <p className="lead"></p>
     
             </div>
         )
     }
-
+}
 
 export default Header; 
 

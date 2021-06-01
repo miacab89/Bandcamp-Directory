@@ -1,15 +1,19 @@
 import React, {useRef, useState} from 'react';
 import { Container, Form, Card, Button, Alert } from 'react-bootstrap';
 import { useAuth } from '../Contexts/AuthContext.js'; 
+import { Link, useHistory } from "react-router-dom"
+import inlieu from '../inlieu.png'
+
+
 
 export default function SignUp() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef() 
-    const { signup, currentUser } = useAuth()
+    const { signup } = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
-     
+    const history = useHistory() 
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -22,11 +26,9 @@ export default function SignUp() {
             setError("")
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
-            console.log(signup)
+            history.pushState("/")
         } catch {
             setError('Failed to create an account')
-            console.log(signup)
-            console.log(setError)
         }
         setLoading(false)
 
@@ -39,7 +41,6 @@ export default function SignUp() {
             <Card className="form-card">
                 <Card.Body>
                     <h2 className="text-center mb-4">SignUp</h2>
-                    {currentUser && currentUser.email}
                     {error && <Alert variant="danger">{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group id="email">
@@ -54,9 +55,11 @@ export default function SignUp() {
                             <Form.Label>Re-Enter Password</Form.Label>
                                 <Form.Control className="text-field" type="password" ref={passwordConfirmRef} required />
                         </Form.Group>
-                        <Button disabled={loading} className="button" type="submit">Sign Up</Button>
+                        <Button variant="dark" disabled={loading} className="button" type="submit">Sign Up</Button>
+                        <div>Already have an account?<Link to="/login"> Log In</Link></div>
                     </Form>
                 </Card.Body>
+                <div className="logo"><img src={inlieu} alt="inlieu" /></div>
             </Card>
         </Container>
         </div>
